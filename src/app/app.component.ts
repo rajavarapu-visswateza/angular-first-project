@@ -8,4 +8,8 @@ import { Router } from '@angular/router';
 })
 export class AppComponent{
   title = 'sample-page';
+
+  constructor(private router : Router){
+    router.navigate(['/home'])
+  }
 }
