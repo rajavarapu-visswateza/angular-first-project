@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../app.state';
 import { loginAction } from '../actions/login.action';
 import { loginData } from '../models/login.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ import { loginData } from '../models/login.model';
 export class LoginComponent{
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private store: Store<AppState>) {
+  constructor(private fb: FormBuilder, private store: Store<AppState>, private router: Router) {
     this.loginForm = this.fb.group({
       username: ['username', [Validators.required]],
       password: ['password', [Validators.required]]
@@ -28,5 +29,7 @@ export class LoginComponent{
     this.loginData = this.loginForm.value
 
     this.store.dispatch(loginAction({loginDetails: this.loginData}))
+
+    this.router.navigate(['/home'])
   }
 }
