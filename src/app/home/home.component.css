@@ -1,0 +1,42 @@
+.product-list {
+    padding: 20px;
+  }
+  
+  .product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .product {
+    width: calc(25% - 10px);
+    margin-bottom: 20px;
+  }
+  
+  .product-box {
+    height: 300px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .product img {
+    max-width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .product h3 {
+    font-size: 16px;
+    margin: 10px 0;
+    word-break: keep-all;
+  }
+  
+  .product p {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  
