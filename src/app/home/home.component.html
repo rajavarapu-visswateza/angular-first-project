@@ -3,10 +3,14 @@
   <div class="product-grid">
     <div *ngFor="let product of products" class="product">
       <div class="product-box">
-        <img [src]="product.image" alt="{{ product.title }}">
+        <div class="image-container">
+          <img [src]="product.image" alt="{{ product.title }}">
+        </div>
         <h3 class="title">{{ product.title }}</h3>
-        <p class="price">Price: ${{ product.price }}</p>
-        <p class="description">{{ product.description | slice:0:150 }}</p>
+        <div class="details">
+          <p class="description">{{ product.category | uppercase }}</p>
+          <h4 class="price">Price: ${{ product.price }}</h4>
+        </div>
       </div>
     </div>
   </div>
